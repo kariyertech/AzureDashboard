@@ -1,0 +1,7 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="4" y="36" width="16" height="24" rx="4" fill="#4F8CFF"/>
+  <rect x="24" y="24" width="16" height="36" rx="4" fill="#FFA76D"/>
+  <rect x="44" y="12" width="16" height="48" rx="4" fill="#4FD18C"/>
+  <circle cx="32" cy="16" r="6" fill="#fff" fill-opacity="0.9"/>
+  <text x="32" y="60" text-anchor="middle" font-size="10" fill="#222" font-family="Arial, sans-serif">DevOps</text>
+</svg>

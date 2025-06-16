@@ -1,0 +1,11 @@
+flask
+flask-cors
+requests
+pandas
+openpyxl
+azure-identity
+azure-devops
+flask-caching
+apscheduler
+sqlite-utils
+

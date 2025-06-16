@@ -1,0 +1,46 @@
+version: '3.8'
+
+services:
+  flask-api:
+    build:
+      context: .
+      dockerfile: Dockerfile # Refers to the backend Dockerfile
+    ports:
+      - "5001:5000" # Host port 5001, container port 5000 for the API
+    env_file:
+      - .env # Load environment variables from .env file
+    volumes:
+      - devops_cache_data:/app/api/devops_cache.db
+    networks:
+      - azuredevops_network
+
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.frontend # Corrected to Dockerfile.frontend
+    ports:
+      - "5173:80" # Vite default dev port is 5173, Nginx in container serves on 80
+    restart: unless-stopped
+    depends_on:
+      - flask-api
+    volumes:
+      - ./src:/app/src
+      - ./public:/app/public # If you have a public folder
+      - ./index.html:/app/index.html
+      - ./vite.config.ts:/app/vite.config.ts
+      - ./tailwind.config.js:/app/tailwind.config.js
+      - ./postcss.config.js:/app/postcss.config.js
+      - ./tsconfig.json:/app/tsconfig.json
+      - ./package.json:/app/package.json
+      # Add other necessary config files if they are at the root
+    networks:
+      - azuredevops_network
+
+volumes:
+  devops_cache_data:
+    driver: local
+
+networks:
+  azuredevops_network:
+    driver: bridge
+
