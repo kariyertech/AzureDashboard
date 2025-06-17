@@ -7,8 +7,6 @@
 
 **Azure DevOps Dashboard**, Azure DevOps projelerinizin metriklerini ve durumlarını görsel olarak takip etmenizi sağlayan modern ve kullanıcı dostu bir dashboard uygulamasıdır.
 
-![Azure DevOps Dashboard Screenshot](docs/screenshot.png)
-
 ## ✨ Özellikler
 
 - 📈 **Comprehensive Metrics**: Projeler, pipeline'lar, repository'ler ve release'lerin detaylı özet bilgileri
